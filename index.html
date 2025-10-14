@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imobiliária Azes - Sua melhor experiência imobiliária</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <h2>AZES</h2>
+                </div>
+                <div class="nav-menu" id="nav-menu">
+                    <a href="#home" class="nav-link">Início</a>
+                    <a href="#properties" class="nav-link">Imóveis</a>
+                    <a href="#about" class="nav-link">Sobre Nós</a>
+                    <a href="#contact" class="nav-link">Contato</a>
+                    <a href="tel:+5551981246634" class="nav-link cta-button">
+                        <i class="fab fa-whatsapp"></i> (51) 98124-6634
+                    </a>
+                </div>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Seja bem-vindo a sua melhor experiência imobiliária</h1>
+                <p>Da oportunidade ao resultado: conduzimos você em cada etapa da sua jornada.</p>
+                <div class="ai-chat-container">
+                    <div class="ai-input-wrapper">
+                        <i class="fas fa-cloud ai-icon"></i>
+                        <input type="text" 
+                               id="ai-input" 
+                               class="ai-input" 
+                               placeholder="Me conte seu lar dos sonhos! Com todos seus desejos..."
+                               maxlength="200">
+                        <button type="button" class="ai-send-btn" id="ai-send-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Casa moderna" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section id="search" class="search-section">
+        <div class="container">
+            <h2>Que imóvel você está procurando?</h2>
+            <div class="search-form">
+                <div class="search-tabs">
+                    <button class="tab-btn active" data-tab="buy">Comprar</button>
+                    <button class="tab-btn" data-tab="rent">Alugar</button>
+                    <button class="tab-btn" data-tab="rural">Imóveis rurais</button>
+                </div>
+                
+                <form class="property-form">
+                    <div class="form-group">
+                        <label for="property-type">Tipo do imóvel</label>
+                        <select id="property-type" name="property-type">
+                            <option value="">Selecione o tipo</option>
+                            <option value="apartamento">Apartamento</option>
+                            <option value="casa">Casa</option>
+                            <option value="cobertura">Cobertura</option>
+                            <option value="kitnet">Kitnet</option>
+                            <option value="sala-comercial">Sala Comercial</option>
+                            <option value="terreno">Terreno</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bedrooms">Dormitórios</label>
+                        <select id="bedrooms" name="bedrooms">
+                            <option value="">Qualquer</option>
+                            <option value="1">1 dormitório</option>
+                            <option value="2">2 dormitórios</option>
+                            <option value="3">3 dormitórios</option>
+                            <option value="4">4 dormitórios</option>
+                            <option value="5+">5 dormitórios ou +</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="city">Cidade</label>
+                        <select id="city" name="city">
+                            <option value="">Selecione a cidade</option>
+                            <option value="lajeado">Lajeado</option>
+                            <option value="estrela">Estrela</option>
+                            <option value="venancio-aires">Venâncio Aires</option>
+                            <option value="arroio-do-meio">Arroio do Meio</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="neighborhood">Bairro</label>
+                        <select id="neighborhood" name="neighborhood">
+                            <option value="">Selecione o bairro</option>
+                            <option value="centro">Centro</option>
+                            <option value="florestal">Florestal</option>
+                            <option value="jardim-botanico">Jardim Botânico</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group price-range">
+                        <label for="price-min">Faixa de valor</label>
+                        <div class="price-inputs">
+                            <input type="number" id="price-min" name="price-min" placeholder="Valor mínimo" min="0">
+                            <span>até</span>
+                            <input type="number" id="price-max" name="price-max" placeholder="Valor máximo" min="0">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary search-btn">
+                        <i class="fas fa-search"></i> Buscar imóvel
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="featured-categories">
+        <div class="container">
+            <h2>Destaques para venda</h2>
+            <div class="categories-grid">
+                <a href="#" class="category-card">
+                    <i class="fas fa-building"></i>
+                    <span>Apartamentos</span>
+                </a>
+                <a href="#" class="category-card">
+                    <i class="fas fa-home"></i>
+                    <span>Casas geminadas</span>
+                </a>
+                <a href="#" class="category-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Universitários</span>
+                </a>
+                <a href="#" class="category-card">
+                    <i class="fas fa-tree"></i>
+                    <span>Imóveis rurais</span>
+                </a>
+                <a href="#" class="category-card">
+                    <i class="fas fa-crown"></i>
+                    <span>Alto padrão</span>
+                </a>
+                <a href="#" class="category-card">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Salas comerciais</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Results Section -->
+    <section id="ai-results" class="ai-results-section" style="display: none;">
+        <div class="container">
+            <div class="ai-results-header">
+                <div class="ai-response-info">
+                    <i class="fas fa-cloud ai-response-icon"></i>
+                    <div>
+                        <h2 id="ai-results-title">Encontrei alguns imóveis perfeitos para você!</h2>
+                        <p id="ai-results-subtitle">Apartamentos com 3 dormitórios, sacada, 2 vagas e acima de 80m²</p>
+                    </div>
+                </div>
+                <button class="back-to-search-btn" onclick="showSearchSection()">
+                    <i class="fas fa-arrow-left"></i> Nova busca
+                </button>
+            </div>
+            
+            <div class="ai-results-grid">
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Apartamento Luxo">
+                        <div class="property-badge">Venda</div>
+                        <div class="ai-match-badge">✨ IA Match</div>
+                    </div>
+                    <div class="property-content">
+                        <h3>Apartamento Luxo 3 Dormitórios com Sacada Gourmet no Jardim Botânico</h3>
+                        <p class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Jardim Botânico, Lajeado
+                        </p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> 3 dorms</span>
+                            <span><i class="fas fa-bath"></i> 2 banheiros</span>
+                            <span><i class="fas fa-car"></i> 2 vagas</span>
+                            <span><i class="fas fa-ruler-combined"></i> 95m²</span>
+                            <span><i class="fas fa-tree"></i> Sacada</span>
+                        </div>
+                        <div class="property-price">R$ 485.000</div>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Apartamento Moderno">
+                        <div class="property-badge">Venda</div>
+                        <div class="ai-match-badge">✨ IA Match</div>
+                    </div>
+                    <div class="property-content">
+                        <h3>Apartamento Moderno 3 Dormitórios com Varanda no Centro</h3>
+                        <p class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Centro, Lajeado
+                        </p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> 3 dorms</span>
+                            <span><i class="fas fa-bath"></i> 2 banheiros</span>
+                            <span><i class="fas fa-car"></i> 2 vagas</span>
+                            <span><i class="fas fa-ruler-combined"></i> 88m²</span>
+                            <span><i class="fas fa-tree"></i> Varanda</span>
+                        </div>
+                        <div class="property-price">R$ 420.000</div>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Apartamento Completo">
+                        <div class="property-badge">Venda</div>
+                        <div class="ai-match-badge">✨ IA Match</div>
+                    </div>
+                    <div class="property-content">
+                        <h3>Apartamento Completo 3 Dormitórios com Sacada Ampla no Florestal</h3>
+                        <p class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Florestal, Lajeado
+                        </p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> 3 dorms</span>
+                            <span><i class="fas fa-bath"></i> 3 banheiros</span>
+                            <span><i class="fas fa-car"></i> 2 vagas</span>
+                            <span><i class="fas fa-ruler-combined"></i> 105m²</span>
+                            <span><i class="fas fa-tree"></i> Sacada</span>
+                        </div>
+                        <div class="property-price">R$ 520.000</div>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Apartamento Premium">
+                        <div class="property-badge">Venda</div>
+                        <div class="ai-match-badge">✨ IA Match</div>
+                    </div>
+                    <div class="property-content">
+                        <h3>Apartamento Premium 3 Dormitórios com Terraço Privativo no Alto do Parque</h3>
+                        <p class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Alto do Parque, Lajeado
+                        </p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> 3 dorms</span>
+                            <span><i class="fas fa-bath"></i> 2 banheiros</span>
+                            <span><i class="fas fa-car"></i> 2 vagas</span>
+                            <span><i class="fas fa-ruler-combined"></i> 110m²</span>
+                            <span><i class="fas fa-tree"></i> Terraço</span>
+                        </div>
+                        <div class="property-price">R$ 580.000</div>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Apartamento Elegante">
+                        <div class="property-badge">Venda</div>
+                        <div class="ai-match-badge">✨ IA Match</div>
+                    </div>
+                    <div class="property-content">
+                        <h3>Apartamento Elegante 3 Dormitórios com Sacada Integrada no São Cristóvão</h3>
+                        <p class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            São Cristóvão, Lajeado
+                        </p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> 3 dorms</span>
+                            <span><i class="fas fa-bath"></i> 2 banheiros</span>
+                            <span><i class="fas fa-car"></i> 2 vagas</span>
+                            <span><i class="fas fa-ruler-combined"></i> 92m²</span>
+                            <span><i class="fas fa-tree"></i> Sacada</span>
+                        </div>
+                        <div class="property-price">R$ 465.000</div>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Apartamento Confort">
+                        <div class="property-badge">Venda</div>
+                        <div class="ai-match-badge">✨ IA Match</div>
+                    </div>
+                    <div class="property-content">
+                        <h3>Apartamento Confort 3 Dormitórios com Varanda Gourmet na Vila Nova</h3>
+                        <p class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Vila Nova, Arroio do Meio
+                        </p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> 3 dorms</span>
+                            <span><i class="fas fa-bath"></i> 2 banheiros</span>
+                            <span><i class="fas fa-car"></i> 2 vagas</span>
+                            <span><i class="fas fa-ruler-combined"></i> 85m²</span>
+                            <span><i class="fas fa-tree"></i> Varanda</span>
+                        </div>
+                        <div class="property-price">R$ 385.000</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ai-results-footer">
+                <p class="ai-results-info">
+                    <i class="fas fa-lightbulb"></i>
+                    Estes imóveis foram selecionados pela nossa IA com base nas suas preferências
+                </p>
+                <div class="ai-results-actions">
+                    <button class="btn btn-primary" onclick="openWhatsApp('Olá! Gostaria de mais informações sobre os apartamentos de 3 dormitórios que a IA encontrou para mim.')">
+                        <i class="fab fa-whatsapp"></i> Falar com corretor
+                    </button>
+                    <button class="btn btn-secondary" onclick="showSearchSection()">
+                        <i class="fas fa-search"></i> Refinar busca
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Properties Section -->
+    <section id="properties" class="properties-section">
+        <div class="container">
+            <!-- For Sale Properties -->
+            <div class="properties-group">
+                <div class="section-header">
+                    <h2>Os melhores imóveis para venda</h2>
+                    <a href="#" class="view-all-btn">ver todos</a>
+                </div>
+                <div class="properties-grid">
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Casa">
+                            <div class="property-badge">Venda</div>
+                        </div>
+                        <div class="property-content">
+                            <h3>Casa 4 Dormitórios no bairro Alto do Parque em Lajeado</h3>
+                            <p class="property-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Alto do Parque, Lajeado
+                            </p>
+                            <div class="property-features">
+                                <span><i class="fas fa-bed"></i> 4 dorms</span>
+                                <span><i class="fas fa-bath"></i> 3 banheiros</span>
+                                <span><i class="fas fa-car"></i> 2 vagas</span>
+                                <span><i class="fas fa-ruler-combined"></i> 180m²</span>
+                            </div>
+                            <div class="property-price">R$ 450.000</div>
+                        </div>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Cobertura">
+                            <div class="property-badge">Venda</div>
+                        </div>
+                        <div class="property-content">
+                            <h3>Cobertura Duplex 2 Dormitórios no bairro Jardim Botânico em Lajeado</h3>
+                            <p class="property-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Jardim Botânico, Lajeado
+                            </p>
+                            <div class="property-features">
+                                <span><i class="fas fa-bed"></i> 2 dorms</span>
+                                <span><i class="fas fa-bath"></i> 2 banheiros</span>
+                                <span><i class="fas fa-car"></i> 1 vaga</span>
+                                <span><i class="fas fa-ruler-combined"></i> 120m²</span>
+                            </div>
+                            <div class="property-price">R$ 380.000</div>
+                        </div>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Apartamento">
+                            <div class="property-badge">Venda</div>
+                        </div>
+                        <div class="property-content">
+                            <h3>Apartamento 2 dormitórios mobiliado no bairro Centro em Lajeado</h3>
+                            <p class="property-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Centro, Lajeado
+                            </p>
+                            <div class="property-features">
+                                <span><i class="fas fa-bed"></i> 2 dorms</span>
+                                <span><i class="fas fa-bath"></i> 1 banheiro</span>
+                                <span><i class="fas fa-car"></i> 1 vaga</span>
+                                <span><i class="fas fa-ruler-combined"></i> 85m²</span>
+                            </div>
+                            <div class="property-price">R$ 290.000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- For Rent Properties -->
+            <div class="properties-group">
+                <div class="section-header">
+                    <h2>Os melhores imóveis para aluguel</h2>
+                    <a href="#" class="view-all-btn">ver todos</a>
+                </div>
+                <div class="properties-grid">
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Apartamento">
+                            <div class="property-badge rental">Aluguel</div>
+                        </div>
+                        <div class="property-content">
+                            <h3>Apartamento 2 dormitórios no São Cristóvão em Lajeado</h3>
+                            <p class="property-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                São Cristóvão, Lajeado
+                            </p>
+                            <div class="property-features">
+                                <span><i class="fas fa-bed"></i> 2 dorms</span>
+                                <span><i class="fas fa-bath"></i> 1 banheiro</span>
+                                <span><i class="fas fa-car"></i> 1 vaga</span>
+                                <span><i class="fas fa-ruler-combined"></i> 75m²</span>
+                            </div>
+                            <div class="property-price">R$ 1.200/mês</div>
+                        </div>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Apartamento">
+                            <div class="property-badge rental">Aluguel</div>
+                        </div>
+                        <div class="property-content">
+                            <h3>Apartamento 2 dormitórios no bairro Florestal em Lajeado</h3>
+                            <p class="property-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Florestal, Lajeado
+                            </p>
+                            <div class="property-features">
+                                <span><i class="fas fa-bed"></i> 2 dorms</span>
+                                <span><i class="fas fa-bath"></i> 1 banheiro</span>
+                                <span><i class="fas fa-car"></i> 1 vaga</span>
+                                <span><i class="fas fa-ruler-combined"></i> 80m²</span>
+                            </div>
+                            <div class="property-price">R$ 1.350/mês</div>
+                        </div>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Sala Comercial">
+                            <div class="property-badge rental">Aluguel</div>
+                        </div>
+                        <div class="property-content">
+                            <h3>Sala Comercial no bairro Jardim Botânico em Lajeado</h3>
+                            <p class="property-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Jardim Botânico, Lajeado
+                            </p>
+                            <div class="property-features">
+                                <span><i class="fas fa-briefcase"></i> Comercial</span>
+                                <span><i class="fas fa-bath"></i> 1 banheiro</span>
+                                <span><i class="fas fa-car"></i> 1 vaga</span>
+                                <span><i class="fas fa-ruler-combined"></i> 45m²</span>
+                            </div>
+                            <div class="property-price">R$ 800/mês</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Conectando você ao futuro do mercado imobiliário</h2>
+                    <p>A Azes nasceu com um olhar voltado para o futuro, enxergando oportunidades onde muitos ainda não veem. Somos um ecossistema imobiliário completo, pronto para guiar tanto quem está começando quanto quem já vive o universo dos imóveis.</p>
+                    <div class="about-buttons">
+                        <a href="#contact" class="btn btn-primary">Saiba mais</a>
+                        <a href="https://api.whatsapp.com/send/?phone=5551981246634" class="btn btn-secondary">
+                            <i class="fab fa-whatsapp"></i> Fale com um corretor
+                        </a>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Equipe Azes" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Deseja negociar seu imóvel?</h2>
+            <p>Entre em contato conosco pelo WhatsApp.</p>
+            <div class="contact-content">
+                <div class="contact-buttons">
+                    <a href="https://api.whatsapp.com/send/?phone=5551981246634" class="btn btn-primary">
+                        <i class="fab fa-whatsapp"></i> Quero vender
+                    </a>
+                    <a href="https://api.whatsapp.com/send/?phone=5551981246634" class="btn btn-secondary">
+                        <i class="fab fa-whatsapp"></i> Quero alugar
+                    </a>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fab fa-instagram"></i>
+                        <a href="https://www.instagram.com/imobiliariaazes/">@imobiliariaazes</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:administrativo@imobiliariaazes.com">administrativo@imobiliariaazes.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://api.whatsapp.com/send/?phone=5551981246634">(51) 98124-6634</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.app.goo.gl/cTgqg7irRxLF9pc96">Ver localização</a>
+                    </div>
+                </div>
+            </div>
+            <p class="contact-cta">Não adie o seu sonho! Agende uma conversa conosco.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AZES NEGÓCIOS IMOBILIÁRIOS</h3>
+                    <p>CNPJ 61.159.537/0001-93</p>
+                    <p>CRECI-RS 28341 J</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Vendas</h4>
+                    <ul>
+                        <li><a href="#">Apartamentos</a></li>
+                        <li><a href="#">Casas</a></li>
+                        <li><a href="#">Coberturas</a></li>
+                        <li><a href="#">Terrenos</a></li>
+                        <li><a href="#">Imóveis Comerciais</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Locação</h4>
+                    <ul>
+                        <li><a href="#">Apartamentos</a></li>
+                        <li><a href="#">Casas</a></li>
+                        <li><a href="#">Salas Comerciais</a></li>
+                        <li><a href="#">Kitnets</a></li>
+                        <li><a href="#">Lofts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Úteis</h4>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#properties">Imóveis</a></li>
+                        <li><a href="#about">Sobre Nós</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Azes Negócios Imobiliários. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
