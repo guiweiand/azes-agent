@@ -493,7 +493,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             if (subtitle) {
-                subtitle.textContent = `Baseado na sua busca: "${userInput}" - Apartamentos com 3 dormitórios, sacada, 2 vagas e acima de 80m²`;
+                subtitle.textContent = `Baseado na sua busca: "${userInput}" - Apartamentos com 3 dormitórios, sacada, 2 vagas e acima de 140m²`;
             }
 
             // Scroll to results section smoothly
